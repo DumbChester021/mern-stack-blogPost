@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 
 //Components
 import BlogPost from "../components/BlogPost"
+import BlogPostForm from "../components/BlogPostForm";
 
 const Home = () => {
     const [blogPosts, setBlogPosts] = useState(null);
@@ -20,11 +21,13 @@ const Home = () => {
 
     return (
         <div className="home">
+            <BlogPostForm />
             <div className="blogPosts">
                 {blogPosts && blogPosts.map((blogPost) => (
                     <BlogPost key={blogPost.id} blogPost={blogPost} />
                 ))}
             </div>
+            
         </div>
     )
 }
